@@ -68,12 +68,7 @@
 </style>
 </head>
 <body>
-    <%
-        Collection<Tour> listTour = TourDatabase.getInstance().getAllTours();
-        request.setAttribute("listTour", listTour);
-        
-        
-    %>
+
     <h3>Các chương trình du lịch</h3>
     <table>
         <tr>
@@ -85,12 +80,12 @@
         <c:forEach var="t" items="${listTour}">
             <tr>
                 <td>
-                    <a href="tourDetails.jsp?tourId=${t.id}">${t.description}</a><br>
+                    <a href="tourDetail?tourId=${t.id}">${t.description}</a><br>
                     ${t.days}
                 </td>
                 <td>${t.departureSchedule}</td>
                 <td>${t.price}</td>
-                <td><a href = "bookingTour.jsp?tourId=${t.id}"><button type="button" class="btn-book">Đặt tour</button></a></td>
+                <td><a href = "bookingTour?tourId=${t.id}"><button type="button" class="btn-book">Đặt tour</button></a></td>
             </tr>
         </c:forEach>
     </table>

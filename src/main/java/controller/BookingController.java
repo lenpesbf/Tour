@@ -31,7 +31,6 @@ public class BookingController extends HttpServlet {
 			throws ServletException, IOException {
 		String action = request.getParameter("action");
 
-		if ("submit".equals(action)) {
 			// Xử lý khi người dùng nhấn "Gửi"
 			String fullname = request.getParameter("username");
 			String address = request.getParameter("address");
@@ -62,9 +61,6 @@ public class BookingController extends HttpServlet {
 			session.setAttribute("customer", customer);
 			session.setAttribute("booking", booking);
 			request.getRequestDispatcher("confirm.jsp").forward(request, response);
-		} else if ("back".equals(action)) {
-			// Xử lý khi người dùng nhấn "Hủy"
-			response.sendRedirect("listTour.jsp");
-		}
+		
 	}
 }

@@ -27,9 +27,8 @@
 		<button type="submit">Xác nhận</button>
 	</form>
 
-	<form action="listTour.jsp" method="GET">
-		<button type="submit">Quay lại danh sách tours</button>
-	</form>
+	<a href = "listTour"><button type="submit">Quay lại danh sách tours</button></a>
+
 
 </body>
 </html>

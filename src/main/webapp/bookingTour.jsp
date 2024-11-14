@@ -91,13 +91,13 @@ form {
 </style>
 </head>
 <body>
-	<%
+	<%-- <%
 	String tourIdParam = request.getParameter("tourId");
 	Long itemId = Long.parseLong(tourIdParam);
 
 	Tour tour = TourDatabase.getInstance().getTourById(itemId);
 	session.setAttribute("tourBooking", tour);
-	%>
+	%> --%>
 	<h2>
 		Đặt tour: <span style="font-weight: bold;">${tourBooking.description}</span>
 		${tourBooking.days}
@@ -137,10 +137,10 @@ form {
 		</div>
 		<div class="buttons">
 			<button type="submit" name="action" value="submit">Gửi</button>
-			<button type="submit" name="action" value="back">Hủy</button>
+			<a href = "listTour"><button type = "button" name="action" value="back">Hủy</button></a>
 		</div>
 	</form>
-
+	
 	
 </body>
 </html>

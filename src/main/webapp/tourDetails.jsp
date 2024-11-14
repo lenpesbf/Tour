@@ -73,13 +73,6 @@
 </style>
 </head>
 <body>
-    <%
-        String tourIdParam = request.getParameter("tourId");
-        Long itemId = Long.parseLong(tourIdParam);
-
-        Tour tour = TourDatabase.getInstance().getTourById(itemId);
-        request.setAttribute("tour", tour);
-    %>
 
     <h3>${tour.description}</h3>
     <h4 class="tour-details">
@@ -93,7 +86,7 @@
         ${tour.details}
     </div>
     
-    <a href = "bookingTour.jsp?tourId=${tour.id}"><button type="button" class="btn-book">Đặt tour</button></a> 
-    <a href="listTour.jsp" class="tour-link">CHƯƠNG TRÌNH TOUR</a>
+    <a href = "bookingTour?tourId=${tour.id}"><button type="button" class="btn-book">Đặt tour</button></a> 
+    <a href="listTour" class="tour-link">CHƯƠNG TRÌNH TOUR</a>
 </body>
 </html>
